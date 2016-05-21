@@ -1,4 +1,4 @@
-package main;
+package config;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver; 
 
 @Configuration
-@ComponentScan("main")
+@ComponentScan("controller")
 @EnableWebMvc
 public class Config extends WebMvcConfigurerAdapter{
     

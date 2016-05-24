@@ -75,7 +75,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form action="#!" method="post" id="contactForm" novalidate onsubmit="return testpass(this)">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label style="text-align:left">Nome</label>
@@ -100,7 +100,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label style="text-align:left">E-Mail</label>
-                                <input type="text" class="form-control" placeholder="E-mail" id="email" name="email" required data-validation-required-message="Inserisci di nuovo la tua e-mail">
+                                <input type="email" class="form-control" placeholder="E-mail" id="email" name="email" required data-validation-required-message="Inserisci di nuovo la tua e-mail">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -177,7 +177,17 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="./resources/js/freelancer.js"></script>
-
+    <script>
+        function testpass(modulo) {
+            if (modulo.password.value != modulo.cpassword.value) {
+                alert("La password inserita non coincide con la prima!")
+                modulo.cpassword.focus()
+                modulo.password.select()
+                return false
+            }
+            return true
+        }
+    </script>
 </body>
 
 </html>

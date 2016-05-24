@@ -78,14 +78,14 @@
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome Utente</label>
+                                <label style="text-align:left">Nome Utente</label>
                                 <input type="text" class="form-control" placeholder="Nome Utente" id="nomeUtente" required data-validation-required-message="Inserisci il tuo nome utente">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Password</label>
+                                <label style="text-align:left">Password</label>
                                 <input type="password" class="form-control" placeholder="Password" id="email" required data-validation-required-message="Inserisci la tua password">
                                 <p class="help-block text-danger"></p>
                             </div>

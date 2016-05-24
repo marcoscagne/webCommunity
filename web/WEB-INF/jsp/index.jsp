@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html lang="en">
+
 
 <head>
 
@@ -35,7 +39,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" oncontextmenu="return false;">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -99,24 +103,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                <%--c:forEach items="" var="">--%>
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
                             </div>
-                        </div>
-                        <img src="./resources/img/portfolio/cabin.png" class="img-responsive" alt="">
-                    </a>
-                </div>
+                            <img src="./resources/img/portfolio/cabin.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                <%--</c:forEach>--%>
                 
             </div>
         </div>
     </section>
-
-    
-
-    
 
     <!-- Footer -->
     <footer class="text-center">
@@ -185,15 +187,15 @@
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    <strong><a href="#!">Start Bootstrap</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="#!">April 2014</a>
                                     </strong>
                                 </li>
                                 <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    <strong><a href="#!">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>

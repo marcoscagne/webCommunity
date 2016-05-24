@@ -103,18 +103,19 @@
                 </div>
             </div>
             <div class="row">
-                <%--c:forEach items="" var="">--%>
+                <c:forEach items="${eventi}" var="e">
                     <div class="col-sm-4 portfolio-item">
                         <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
+                                    <br/><br/>${e.titolo}
                                 </div>
                             </div>
-                            <img src="./resources/img/portfolio/cabin.png" class="img-responsive" alt="">
+                            <img src="${e.foto}" class="img-responsive" alt="">
                         </a>
                     </div>
-                <%--</c:forEach>--%>
+                </c:forEach>
                 
             </div>
         </div>

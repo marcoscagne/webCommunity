@@ -71,31 +71,60 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header style="background: white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Inserisci il tuo nome">
+                                <label style="text-align:left">Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required data-validation-required-message="Inserisci il tuo nome">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Cognome</label>
-                                <input type="text" class="form-control" placeholder="Cognome" id="cognome" required data-validation-required-message="Inserisci il tuo cognome">
+                                <label style="text-align:left">Cognome</label>
+                                <input type="text" class="form-control" placeholder="Cognome" id="cognome" name="cognome" required data-validation-required-message="Inserisci il tuo cognome">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Cognome</label>
-                                <input type="text" class="form-control" placeholder="Cognome" id="cognome" required data-validation-required-message="Inserisci il tuo cognome">
+                                <label style="text-align:left">Nome Utente</label>
+                                <input type="password" class="form-control" placeholder="Nome Utente" id="nomeUtente" name="nomeUtente" required data-validation-required-message="Inserisci il tuo Nome Utente">
                                 <p class="help-block text-danger"></p>
                             </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label style="text-align:left">E-Mail</label>
+                                <input type="text" class="form-control" placeholder="E-mail" id="email" name="email" required data-validation-required-message="Inserisci di nuovo la tua e-mail">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label style="text-align:left">Password</label>
+                                <input type="password" class="form-control" placeholder="Password" id="password" name="password" required data-validation-required-message="Inserisci la tua password">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label style="text-align:left">Conferma password</label>
+                                <input type="password" class="form-control" placeholder="Conferma password" id="cpassword" name="cpassword" required data-validation-required-message="Inserisci di nuovo la tua password">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <label class="check">
+                                <input type="checkbox" id="pop" name="pop" value="option1"> POP
+                            </label>
+                            <label class="check">
+                                <input type="checkbox" id="rock" name="rock" value="option1"> ROCK
+                            </label>
                         </div>
                         <br>
                         <div id="success"></div>

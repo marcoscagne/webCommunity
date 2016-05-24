@@ -32,13 +32,14 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "Eventi")
-@XmlRootElement
+
 @NamedQueries({
-    @NamedQuery(name = "Eventi.findAll", query = "SELECT e FROM Eventi e"),
-    @NamedQuery(name = "Eventi.findByIdEvento", query = "SELECT e FROM Eventi e WHERE e.idEvento = :idEvento"),
-    @NamedQuery(name = "Eventi.findByLuogo", query = "SELECT e FROM Eventi e WHERE e.luogo = :luogo"),
-    @NamedQuery(name = "Eventi.findByData", query = "SELECT e FROM Eventi e WHERE e.data = :data"),
-    @NamedQuery(name = "Eventi.findByTitolo", query = "SELECT e FROM Eventi e WHERE e.titolo = :titolo")})
+    @NamedQuery(
+        name="tuttiEventi",
+        query="FROM Eventi ORDER BY Data"
+    )
+})
+
 public class Eventi implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -46,6 +47,9 @@ public class Eventi implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_Evento")
     private Integer idEvento;
+    @Basic(optional = false)
+    @Column(name = "foto")
+    private String foto;
     @Basic(optional = false)
     @Column(name = "Luogo")
     private String luogo;
@@ -69,8 +73,9 @@ public class Eventi implements Serializable {
         this.idEvento = idEvento;
     }
 
-    public Eventi(Integer idEvento, String luogo, Date data, String titolo) {
+    public Eventi(Integer idEvento, String foto, String luogo, Date data, String titolo) {
         this.idEvento = idEvento;
+        this.foto = foto;
         this.luogo = luogo;
         this.data = data;
         this.titolo = titolo;
@@ -82,6 +87,14 @@ public class Eventi implements Serializable {
 
     public void setIdEvento(Integer idEvento) {
         this.idEvento = idEvento;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public String getLuogo() {

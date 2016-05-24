@@ -29,12 +29,8 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "Commenti")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Commenti.findAll", query = "SELECT c FROM Commenti c"),
-    @NamedQuery(name = "Commenti.findByIdComm", query = "SELECT c FROM Commenti c WHERE c.idComm = :idComm"),
-    @NamedQuery(name = "Commenti.findByCommento", query = "SELECT c FROM Commenti c WHERE c.commento = :commento"),
-    @NamedQuery(name = "Commenti.findByVoto", query = "SELECT c FROM Commenti c WHERE c.voto = :voto")})
+
+
 public class Commenti implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

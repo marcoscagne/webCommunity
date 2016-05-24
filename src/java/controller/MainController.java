@@ -1,5 +1,7 @@
 package controller;
 
+import config.HibernateUtil;
+import crud.CRUD;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
     @RequestMapping(value = "/")
     public String index(ModelMap map) {
+        CRUD c = new CRUD(HibernateUtil.getSessionFactory());
+        map.put("eventi", c.listEventi());
         return "index";
     }
     

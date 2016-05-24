@@ -75,7 +75,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    nome<br/>cognome<br/>email<br/>eventi interessati<br/>nome utente<br/>password<br/>conferma password<br/>SUBMIT!
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Inserisci il tuo nome">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Cognome</label>
+                                <input type="text" class="form-control" placeholder="Cognome" id="cognome" required data-validation-required-message="Inserisci il tuo cognome">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Cognome</label>
+                                <input type="text" class="form-control" placeholder="Cognome" id="cognome" required data-validation-required-message="Inserisci il tuo cognome">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Invia</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

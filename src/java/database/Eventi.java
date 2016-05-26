@@ -6,10 +6,8 @@
 package database;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,12 +17,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -32,6 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "Eventi")
+@XmlRootElement
 
 @NamedQueries({
     @NamedQuery(
@@ -60,11 +57,12 @@ public class Eventi implements Serializable {
     @Basic(optional = false)
     @Column(name = "Titolo")
     private String titolo;
+    @Basic(optional = false)
+    @Column(name = "descrizione")
+    private String descrizione;
     @JoinColumn(name = "Utente", referencedColumnName = "Nickname")
     @ManyToOne(optional = false)
     private Utenti utente;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
-    private Collection<Commenti> commentiCollection;
 
     public Eventi() {
     }
@@ -73,12 +71,13 @@ public class Eventi implements Serializable {
         this.idEvento = idEvento;
     }
 
-    public Eventi(Integer idEvento, String foto, String luogo, Date data, String titolo) {
+    public Eventi(Integer idEvento, String foto, String luogo, Date data, String titolo, String descrizione) {
         this.idEvento = idEvento;
         this.foto = foto;
         this.luogo = luogo;
         this.data = data;
         this.titolo = titolo;
+        this.descrizione = descrizione;
     }
 
     public Integer getIdEvento() {
@@ -121,21 +120,20 @@ public class Eventi implements Serializable {
         this.titolo = titolo;
     }
 
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
     public Utenti getUtente() {
         return utente;
     }
 
     public void setUtente(Utenti utente) {
         this.utente = utente;
-    }
-
-    @XmlTransient
-    public Collection<Commenti> getCommentiCollection() {
-        return commentiCollection;
-    }
-
-    public void setCommentiCollection(Collection<Commenti> commentiCollection) {
-        this.commentiCollection = commentiCollection;
     }
 
     @Override

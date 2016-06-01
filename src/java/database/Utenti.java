@@ -44,6 +44,8 @@ public class Utenti implements Serializable {
     private String cognome;
     @Column(name = "Email")
     private String email;
+    @Column(name = "Password")
+    private String password;
     @JoinTable(name = "Ut_Cat", joinColumns = {
         @JoinColumn(name = "nickname_Utente", referencedColumnName = "Nickname")}, inverseJoinColumns = {
         @JoinColumn(name = "id_Cat", referencedColumnName = "id_Cat")})
@@ -61,10 +63,11 @@ public class Utenti implements Serializable {
         this.nickname = nickname;
     }
 
-    public Utenti(String nickname, String nome, String cognome) {
+    public Utenti(String nickname, String nome, String cognome,String password) {
         this.nickname = nickname;
         this.nome = nome;
         this.cognome = cognome;
+        this.password= password;
     }
 
     public String getNickname() {
@@ -98,7 +101,16 @@ public class Utenti implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getPswd() {
+        return email;
+    }
 
+    public void setPswd(String password) {
+        this.password = password;
+    }
+
+    
     @XmlTransient
     public Collection<Categorie> getCategorieCollection() {
         return categorieCollection;

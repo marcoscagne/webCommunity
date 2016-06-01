@@ -12,6 +12,7 @@ public class MainController {
     public String index(ModelMap map) {
         CRUD c = new CRUD(HibernateUtil.getSessionFactory());
         map.put("eventi", c.listEventi());
+        map.put("commenti",c.listCommenti());
         return "index";
     }
     

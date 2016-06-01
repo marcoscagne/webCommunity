@@ -34,7 +34,28 @@ public class CRUD {
         try {
             tx = session.beginTransaction();
             Query query = session.getNamedQuery("tuttiEventi");
-            query.setMaxResults(3);
+            query.setMaxResults(9);
+            List result = query.list();
+            return result;
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
+    
+    public List<Commenti> listCommenti() {
+        Session session = factory.openSession();
+        ArrayList<Commenti> com = new ArrayList<Commenti>();
+        com = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.getNamedQuery("tuttiCommenti");
             List result = query.list();
             return result;
         } catch (HibernateException e) {

@@ -156,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Magro, Ramescu, Scagnellato, Sturza - 2016
+                        Copyright &copy; Magro, Ramescu, Scagnellato, Sturza | 2016
                     </div>
                 </div>
             </div>
@@ -189,19 +189,36 @@
                                 <img src="${e.foto}" class="img-responsive img-centered" alt="">
                                 <p>${e.descrizione}</p>
                                 <ul class="list-inline item-details">
-                                    <li>User:
+                                    <li>Inserito da:
                                         <strong><a>${e.utente.nickname}</a>
                                         </strong>
                                     </li>
-                                    <li>Data:
+                                    <li>Data Evento:
                                         <strong><a>${e.data}</a>
                                         </strong>
                                     </li>
-                                    <li>Luogo:
+                                    <li>Luogo Evento:
                                         <strong><a>${e.luogo}</a>
                                         </strong>
                                     </li>
                                 </ul>
+                                <hr><br/>
+                                <h5>Commenti</h5>
+                                <c:forEach items="${commenti}" var="c">
+                                    <c:if test="${c.evento.idEvento == e.idEvento}">
+                                        <ul class="list-inline item-details">
+                                            <li><strong>Commento:</strong>
+                                                ${c.commento}
+                                            </li>
+                                            <br/>
+                                            <li>
+                                                <strong>Voto:</strong>
+                                                ${c.voto}
+                                            </li>
+                                        </ul>
+                                    </c:if>
+                                </c:forEach>
+                                
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>

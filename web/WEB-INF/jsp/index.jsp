@@ -39,7 +39,7 @@
 
 </head>
 
-<body id="page-top" class="index" oncontextmenu="return false;">
+<body id="page-top" class="index">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -62,7 +62,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#!">Profilo</a>
+                        <a href="./eventi">Eventi</a>
                     </li>
                     <li class="page-scroll">
                         <a href="./login">Login</a>
@@ -98,7 +98,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Eventi</h2>
+                    <h2>Prossimi Eventi</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -135,13 +135,13 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="#!" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="#!" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="#!" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                         </ul>
                     </div>

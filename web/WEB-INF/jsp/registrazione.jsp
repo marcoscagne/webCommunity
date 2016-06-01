@@ -55,7 +55,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a href="./"></a>
                     </li>
                     <li class="page-scroll">
                         <a href="./login">Login</a>
@@ -145,7 +145,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Magro, Ramescu, Scagnellato, Sturza - 2016
+                        Copyright &copy; Magro, Ramescu, Scagnellato, Sturza | 2016
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ package crud;
 
 import database.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -26,7 +27,7 @@ public class CRUD {
         CRUD.factory = factory;
     }
     
-    public List<Eventi> listEventi() {
+    public List<Eventi> listEventi(Boolean tutti) {
         Session session = factory.openSession();
         ArrayList<Eventi> att = new ArrayList<Eventi>();
         att = null;
@@ -34,7 +35,11 @@ public class CRUD {
         try {
             tx = session.beginTransaction();
             Query query = session.getNamedQuery("tuttiEventi");
-            query.setMaxResults(9);
+            Date d = new Date();
+            query.setParameter("data", d);
+            if(!tutti){
+                query.setMaxResults(3);
+            }
             List result = query.list();
             return result;
         } catch (HibernateException e) {

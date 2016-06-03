@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,12 +120,12 @@
                             </div>
                         </div>
                         <div class="checkbox">
+                        <c:forEach items="${categorie}" var="c">
                             <label class="check">
-                                <input type="checkbox" id="pop" name="pop" value="option1"> POP
+                                <input type="checkbox" id="${c.idCat}" value="${c.descrizione}"> 
+                                ${c.descrizione}
                             </label>
-                            <label class="check">
-                                <input type="checkbox" id="rock" name="rock" value="option1"> ROCK
-                            </label>
+                        </c:forEach>
                         </div>
                         <br>
                         <div id="success"></div>

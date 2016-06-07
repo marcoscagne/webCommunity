@@ -53,6 +53,29 @@ public class CRUD {
         return null;
     }
     
+    public List<Eventi> pastEvents() {
+        Session session = factory.openSession();
+        ArrayList<Eventi> att = new ArrayList<Eventi>();
+        att = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.getNamedQuery("eventiPassati");
+            Date d = new Date();
+            query.setParameter("data", d);
+            List result = query.list();
+            return result;
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
+    
     public List<Commenti> listCommenti() {
         Session session = factory.openSession();
         ArrayList<Commenti> com = new ArrayList<Commenti>();

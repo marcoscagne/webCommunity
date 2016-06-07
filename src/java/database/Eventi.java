@@ -34,6 +34,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(
         name="tuttiEventi",
         query="FROM Eventi WHERE data>:data ORDER BY data"
+    ),
+    @NamedQuery(
+        name="eventiPassati",
+        query="FROM Eventi WHERE data<:data ORDER BY data desc"
     )
 })
 

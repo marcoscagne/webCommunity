@@ -26,6 +26,7 @@ public class MainController {
         CRUD c = new CRUD(HibernateUtil.getSessionFactory());
         map.put("eventi", c.listEventi(true));
         map.put("commenti",c.listCommenti());
+        map.put("pastEvents",c.pastEvents());
         return "eventi";
     }
     

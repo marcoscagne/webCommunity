@@ -26,7 +26,14 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "Categorie")
-
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "tutteCategorie",
+                    query = "FROM Categorie"
+            )
+        }
+)
 
 public class Categorie implements Serializable {
     private static final long serialVersionUID = 1L;

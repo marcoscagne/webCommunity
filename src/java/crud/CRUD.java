@@ -97,4 +97,25 @@ public class CRUD {
         return null;
     }
     
+    public List<Categorie> listCategorie() {
+        Session session = factory.openSession();
+        ArrayList<Categorie> categorie = new ArrayList<Categorie>();
+        categorie = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.getNamedQuery("tutteCategorie");
+            List result = query.list();
+            return result;
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
+    
 }

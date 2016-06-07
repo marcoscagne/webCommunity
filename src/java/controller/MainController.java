@@ -32,6 +32,8 @@ public class MainController {
     
     @RequestMapping(value = "/registrazione")
     public String registrazione(ModelMap map) {
+        CRUD c = new CRUD(HibernateUtil.getSessionFactory());
+        map.put("categorie", c.listCategorie());
         return "registrazione";
     }
     
